@@ -1,0 +1,39 @@
+.RegistrationForm {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 200px;
+    align-items: center;
+    background-color: rgba(138, 140, 238, 0.295);
+    border: 1px solid black;
+    padding: 40px;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    padding: 3px;
+    margin-top: 10px;
+    width: 200px;
+    text-align: center;
+}
+
+.link:hover {
+    font-weight: bold;
+}
+
+.submit {
+    margin-top: 10px;
+    border: 1px solid black;
+    background: none;
+}
+
+.submit:hover {
+    font-weight: bold;
+}
+
+input {
+    margin-bottom: 10px;
+}

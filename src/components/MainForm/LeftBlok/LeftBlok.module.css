@@ -1,0 +1,29 @@
+.content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  /* margin-left: 20px; */
+}
+.each{
+  display:flex;
+  /* flex-direction: row; */
+  margin-top: 10px;
+}
+.indicator {
+  background-color: rgb(0, 0, 0);
+  border-radius: 100%;
+  margin-left: 10px;
+  margin-right: 25px;
+  width: 15px;
+  margin-top: 3px;
+  height: 15px;
+}
+.online {
+  composes: indicator;
+  background-color: red;
+}
+.offline {
+  composes: indicator;
+  background-color: rgb(72, 255, 0);
+}
+/* className={false?styles.online:styles.offline} */

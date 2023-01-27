@@ -1,0 +1,151 @@
+.content {
+  width: 98vw;
+  height: 98vh;
+  margin: auto;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.leftBlok {
+  /* display: none; */
+  position: absolute;
+  left: 0;
+  /* top: 15vh; */
+  /* z-index: 1; */
+  /* width: 15%; */
+  /* height: 99.7%; */
+  border: 1px solid rgba(0, 0, 0, 0.301);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: rgba(240, 244, 255, 0.397);
+  text-align: center;
+  color: rgb(0, 153, 255);
+  max-height: 97.7%;
+  overflow-y: auto;
+}
+.cont2 {
+  z-index: 1;
+
+}
+
+.rightBlok {
+  width: 75%;
+  height: 100%;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.363)
+    ),
+    url('https://wallup.net/wp-content/uploads/2019/05/10/2748-morning-dew-over-grass.jpg');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.caht {
+  overflow-y: auto;
+  width: 100%;
+  padding-left: 30px;
+  scrollbar-width: 1px;
+  display: flex;
+  flex-direction: column;
+}
+
+::-webkit-scrollbar {
+    /* width: 15px; */
+    /* height: 10px; */
+    /* background-color: rgba(148, 148, 148, 0.253); */
+    display: none;
+}
+::-webkit-scrollbar-thumb {
+  /* background-color: rgba(0, 162, 255, 0.548); */
+  /* height: 10px; */
+  display: none;
+}
+
+.cahtMessage {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(240, 248, 255, 0.801);
+  border-radius: 10px;
+  width: fit-content;
+  min-width: 155px;
+  padding: 1px;
+  margin-top: 15px;
+}
+.cahtMessage:hover .createdAt {
+  color: rgb(163, 163, 163);
+}
+
+.myMessage {
+  composes: cahtMessage;
+  align-self: flex-end;
+  margin-right: 10px;
+}
+
+.name {
+  margin-bottom: 0;
+  margin-top: 0;
+  /* align-self: center; */
+  font-size: small;
+  padding-left: 4px;
+  padding-top: 4px;
+  font-weight: bold;
+  font-family:Roboto,-apple-system,apple color emoji,BlinkMacSystemFont,Segoe UI,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;
+  color: rgb(43, 116, 226);
+}
+
+.text {
+  /* padding: 1px; */
+  margin-top: 8px;
+  font-size: large;
+  /* font-weight: bold; */
+  /* padding-bottom: 2px; */
+  padding-bottom: 3px;
+  padding-left: 10px;
+  font-family:Roboto,-apple-system,apple color emoji,BlinkMacSystemFont,Segoe UI,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;
+
+}
+
+.createdAt {
+  margin: 0;
+  margin-top: -25px;
+  align-self: flex-end;
+  color: rgba(163, 163, 163, 0.589);
+}
+
+.user {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(240, 248, 255, 0.603);
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 10px;
+    right: 15px;
+    top: 3px;
+}
+
+.user b {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.inp {
+  border-style: none;
+  background-color: rgb(255, 255, 255);
+  width: 75%;
+  border-radius: 25px;
+  border: none;
+  font-size: 23px;
+  font-family:Arial, Helvetica, sans-serif;
+  padding-left: 35px;
+  padding-right: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  outline:none;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
