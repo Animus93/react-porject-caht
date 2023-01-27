@@ -19,7 +19,6 @@ const MainForm = () => {
   const [dataUpd] = useUpdateMessagesMutation();
   const [usersUpd] = useUpdateUsersMutation();
   const [newMessage] = useAddMessageMutation();
-  window.onunload(offline(current.id))
   useEffect(() => {
     const list = document.querySelector('#messages');
     if (list.children[0].lastElementChild) {
