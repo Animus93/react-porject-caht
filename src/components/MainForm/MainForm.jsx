@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import {
   useAddMessageMutation,
@@ -19,15 +19,24 @@ const MainForm = () => {
   const [dataUpd] = useUpdateMessagesMutation();
   const [usersUpd] = useUpdateUsersMutation();
   const [newMessage] = useAddMessageMutation();
+  const [active, setActive] = useState();
+
   useEffect(() => {
+    window.screen.width > 900? setActive(false):setActive(true)
+    console.log(window.screen.width)
+    scrollDown();
+    return;
+  }, [data]);
+
+  const scrollDown = () => {
     const list = document.querySelector('#messages');
     if (list.children[0].lastElementChild) {
       return list.children[0].lastElementChild.scrollIntoView();
     }
-    return;
-  }, [data]);
+  };
 
   const sendMessage = async e => {
+    scrollDown();
     if (e.key === 'Enter') {
       e.preventDefault();
       const messageText = e.currentTarget.textContent;
@@ -43,10 +52,13 @@ const MainForm = () => {
       await newMessage(createNewMessage);
     }
   };
-
   const update = () => {
     dataUpd();
     usersUpd();
+  };
+
+  const showLeftBlok = () => {
+    setActive(!active);
   };
 
   return (
@@ -55,12 +67,12 @@ const MainForm = () => {
         <b>{current.user.name}</b>
         <button onClick={() => offline(current.id)}>Logout</button>
       </div>
-      {window.screen.width > 1000 && (
-        <div className={styles.leftBlok}>
-          <p>
-            <b>Friends Online</b>
-          </p>
-          <LeftBlok />
+      {active ? (
+        <button className={styles.usersList} onClick={showLeftBlok}>
+        </button>
+      ) : (
+        <div className={active?styles.leftBlok:styles.open}>
+          <LeftBlok showLeftBlok={showLeftBlok}/>
         </div>
       )}
       <div id="messages" className={styles.rightBlok}>

@@ -1,29 +1,48 @@
 .content {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  /* margin-left: 20px; */
+display: block;
+}
+.title {
+  color: rgba(0, 132, 255, 0.897);
 }
 .each{
   display:flex;
   /* flex-direction: row; */
-  margin-top: 10px;
-}
-.indicator {
-  background-color: rgb(0, 0, 0);
-  border-radius: 100%;
   margin-left: 10px;
-  margin-right: 25px;
-  width: 15px;
-  margin-top: 3px;
-  height: 15px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.each:hover {
+  background-color: rgba(139, 194, 243, 0.418);
+  width: 100%;
+  height: 100%;
 }
 .online {
-  composes: indicator;
-  background-color: red;
+  color:rgb(90, 182, 94);
 }
 .offline {
-  composes: indicator;
-  background-color: rgb(72, 255, 0);
+  color: rgb(201, 95, 95);
 }
-/* className={false?styles.online:styles.offline} */
+
+.closeBtn {
+margin-top: 10px;
+padding: 0;
+background: none;
+border: none;
+width: 35px;
+height: 35px;
+background-image: url('https://cdn.icon-icons.com/icons2/624/PNG/512/Delete-80_icon-icons.com_57340.png');
+background-size: 35px;
+background-repeat: no-repeat;
+}
+
+.closeBtn:hover {
+  background-image: url('https://cdn.icon-icons.com/icons2/1380/PNG/512/vcsconflicting_93497.png');
+  background-size: 35px;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 900px) {
+  .title{
+    font-size: large;
+  }
+}

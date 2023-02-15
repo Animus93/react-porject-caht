@@ -1,36 +1,40 @@
 .content {
+  position: relative;
   width: 98vw;
+  max-width: 1400px;
   height: 98vh;
   margin: auto;
   padding: 0;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  position: relative;
+  border-right: 1px solid rgba(0, 0, 0, 0.336);
+  border-left: 1px solid rgba(0, 0, 0, 0.39);
 }
 
 .leftBlok {
-  /* display: none; */
-  position: absolute;
-  left: 0;
-  /* top: 15vh; */
-  /* z-index: 1; */
-  /* width: 15%; */
-  /* height: 99.7%; */
-  border: 1px solid rgba(0, 0, 0, 0.301);
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  background-color: rgba(240, 244, 255, 0.397);
+  position: relative;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
   text-align: center;
-  color: rgb(0, 153, 255);
+  color: rgb(68, 66, 66);
+  height: fit-content;
   max-height: 97.7%;
   overflow-y: auto;
+  padding-bottom: 15px;
+  top: 100px;
 }
+
 .cont2 {
   z-index: 1;
 
 }
 
 .rightBlok {
-  width: 75%;
+  border-radius: 10px;
+  margin: auto;
+  width: 80vw;
+  max-width: 1000px;
   height: 100%;
   background-image: linear-gradient(
       rgba(255, 255, 255, 0),
@@ -46,11 +50,12 @@
 
 .caht {
   overflow-y: auto;
-  width: 100%;
+  /* width: 100%; */
   padding-left: 30px;
   scrollbar-width: 1px;
   display: flex;
   flex-direction: column;
+  padding-bottom: 20px;
 }
 
 ::-webkit-scrollbar {
@@ -74,6 +79,7 @@
   min-width: 155px;
   padding: 1px;
   margin-top: 15px;
+  margin-right: 35px;
 }
 .cahtMessage:hover .createdAt {
   color: rgb(163, 163, 163);
@@ -118,14 +124,15 @@
 
 .user {
     position: absolute;
+    height: 50px;
+    right: 10px;
+    top: 10px;
     display: flex;
     flex-direction: column;
     background-color: rgba(240, 248, 255, 0.603);
     padding: 5px;
     border: 1px solid black;
     border-radius: 10px;
-    right: 15px;
-    top: 3px;
 }
 
 .user b {
@@ -136,7 +143,8 @@
 .inp {
   border-style: none;
   background-color: rgb(255, 255, 255);
-  width: 75%;
+  width: 50vw;
+  max-width: 600px;
   border-radius: 25px;
   border: none;
   font-size: 23px;
@@ -148,4 +156,44 @@
   outline:none;
   margin-bottom: 10px;
   margin-top: 10px;
+}
+.usersList {
+  position: absolute;
+  top: 20px;
+  left: 2vw;
+  background: none;
+  border: none;
+  width: 65px;
+  height: 65px;
+  background-image: url('https://cdn.icon-icons.com/icons2/632/PNG/512/users_icon-icons.com_57999.png');
+  background-size: 65px;
+  background-repeat: no-repeat;
+}
+.usersList:hover {
+  transform: scale(0.7);
+}
+
+@media (max-width: 900px) {
+  .leftBlok {
+    display: none;
+  }
+  .open{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(61, 60, 60, 0.911);
+    
+  }
+  .usersList{
+    display: block;
+  }
+}
+
+@media (max-width: 750px) {
+  .rightBlok{
+    width: 100%;
+  }
 }

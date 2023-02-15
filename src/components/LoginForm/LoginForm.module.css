@@ -37,3 +37,9 @@
 input {
     margin-bottom: 10px;
 }
+
+@media (max-width: 400px) {
+    .RegistrationForm{
+        width: 200px;
+    }
+}
