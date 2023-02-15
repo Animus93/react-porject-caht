@@ -1,8 +1,10 @@
 .content {
+  margin: 0;
+  padding: 0;
   position: relative;
   width: 98vw;
   max-width: 1400px;
-  height: 98vh;
+  height: 100vh;
   margin: auto;
   padding: 0;
   display: flex;
@@ -76,7 +78,7 @@
   background-color: rgba(240, 248, 255, 0.801);
   border-radius: 10px;
   width: fit-content;
-  min-width: 155px;
+  min-width: 55px;
   padding: 1px;
   margin-top: 15px;
   margin-right: 35px;
@@ -141,11 +143,12 @@
 }
 
 .inp {
+  resize: none;
   border-style: none;
   background-color: rgb(255, 255, 255);
-  width: 50vw;
-  max-width: 600px;
-  border-radius: 25px;
+  /* width: 170px; */
+  width: 500px;
+  border-radius: 35px;
   border: none;
   font-size: 23px;
   font-family:Arial, Helvetica, sans-serif;
@@ -157,7 +160,7 @@
   margin-bottom: 10px;
   margin-top: 10px;
 }
-.usersList {
+/* .usersList {
   position: absolute;
   top: 20px;
   left: 2vw;
@@ -168,14 +171,55 @@
   background-image: url('../../img/users.png');
   background-size: 65px;
   background-repeat: no-repeat;
-}
+} */
 .usersList:hover {
   transform: scale(0.7);
 }
 
+.form {
+  width: 100%;
+  max-height: 150px;
+  display: flex;
+  justify-content: space-between;
+  /* height: 100%; */
+}
+
+.refresh {
+  background: none;
+  border: none;
+  margin-right: 49px;
+  width: 55px;
+  height: 55px;
+  background-image: url('../../img/refresh.svg');
+  background-size: 55px;
+  background-repeat: no-repeat;
+  padding-top: 10px;
+}
+
+.users{
+  /* padding-bottom: 20px; */
+  order: -1;
+  background: none;
+  border: none;
+  /* align-self: center; */
+  margin-left: 49px;
+  width: 65px;
+  height: 65px;
+  background-image: url('../../img/users.svg');
+  background-size: 65px;
+  background-repeat: no-repeat;
+}
+@media (max-width: 1000px) {
+  .refresh, .users {
+    margin: 0;
+  }
+}
 @media (max-width: 900px) {
   .leftBlok {
     display: none;
+  }
+  .inp {
+    width: 400px;
   }
   .open{
     display: flex;
@@ -187,13 +231,44 @@
     background-color: rgba(61, 60, 60, 0.911);
     
   }
-  .usersList{
+  /* .usersList{
     display: block;
-  }
+  } */
 }
 
 @media (max-width: 750px) {
+  .content {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .inp {
+    width: 350px;
+  }
+
   .rightBlok{
     width: 100%;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  .users,
+  .refresh{
+    background-size: 45px;
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 550px) {
+  .inp {
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 370px) {
+  .inp {
+    max-width: 150px;
   }
 }

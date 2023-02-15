@@ -22,8 +22,7 @@ const MainForm = () => {
   const [active, setActive] = useState();
 
   useEffect(() => {
-    window.screen.width > 900? setActive(false):setActive(true)
-    console.log(window.screen.width)
+    window.screen.width > 900 ? setActive(true) : setActive(false);
     scrollDown();
     return;
   }, [data]);
@@ -35,7 +34,7 @@ const MainForm = () => {
     }
   };
 
-  const sendMessage = async e => {
+  const sendMessage = async (e) => {
     scrollDown();
     if (e.key === 'Enter') {
       e.preventDefault();
@@ -49,7 +48,8 @@ const MainForm = () => {
         name: current.user.name,
         text: messageText,
       };
-      await newMessage(createNewMessage);
+    await newMessage(createNewMessage);
+
     }
   };
   const update = () => {
@@ -67,12 +67,9 @@ const MainForm = () => {
         <b>{current.user.name}</b>
         <button onClick={() => offline(current.id)}>Logout</button>
       </div>
-      {active ? (
-        <button className={styles.usersList} onClick={showLeftBlok}>
-        </button>
-      ) : (
-        <div className={active?styles.leftBlok:styles.open}>
-          <LeftBlok showLeftBlok={showLeftBlok}/>
+      {active && (
+        <div className={!active ? styles.leftBlok : styles.open}>
+          <LeftBlok showLeftBlok={showLeftBlok} />
         </div>
       )}
       <div id="messages" className={styles.rightBlok}>
@@ -99,13 +96,16 @@ const MainForm = () => {
             })}
           </div>
         )}
-        <div
-          className={styles.inp}
-          data-placeholder="Message"
-          contentEditable="true"
-          onKeyDown={sendMessage}
-        ></div>
-        <button onClick={update}>Обновить</button>
+        <div className={styles.form}>
+          <div
+            className={styles.inp}
+            data-placeholder="Message"
+            contentEditable="true"
+            onKeyDown={sendMessage}
+          ></div>
+          <button className={styles.users} onClick={showLeftBlok}></button>
+        <button className={styles.refresh}onClick={update}></button>
+        </div>
       </div>
     </div>
   );
