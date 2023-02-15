@@ -30,13 +30,13 @@ background: none;
 border: none;
 width: 35px;
 height: 35px;
-background-image: url('https://cdn.icon-icons.com/icons2/624/PNG/512/Delete-80_icon-icons.com_57340.png');
+background-image: url('../../../img/close1.png');
 background-size: 35px;
 background-repeat: no-repeat;
 }
 
 .closeBtn:hover {
-  background-image: url('https://cdn.icon-icons.com/icons2/1380/PNG/512/vcsconflicting_93497.png');
+  background-image: url('../../../img/close2.png');
   background-size: 35px;
   background-repeat: no-repeat;
 }
